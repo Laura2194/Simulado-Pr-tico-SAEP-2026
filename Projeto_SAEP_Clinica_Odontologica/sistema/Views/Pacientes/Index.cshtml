@@ -1,0 +1,5 @@
+@model IEnumerable<ClinicaOdontologica.Models.Paciente>
+<div class="d-flex justify-content-between"><h2>Pacientes</h2><a class="btn btn-primary" href="/Pacientes/Criar">Novo paciente</a></div>
+<form method="get" class="my-3 d-flex gap-2"><input name="termo" value="@ViewBag.Termo" class="form-control" placeholder="Buscar por nome ou telefone" /><button class="btn btn-secondary">Buscar</button></form>
+<table class="table table-striped bg-white"><thead><tr><th>Nome</th><th>Telefone</th><th>Ação</th></tr></thead><tbody>
+@foreach(var p in Model){<tr><td>@p.Nome</td><td>@p.Telefone</td><td><a href="/Pacientes/Editar/@p.Id">Editar</a></td></tr>}</tbody></table>

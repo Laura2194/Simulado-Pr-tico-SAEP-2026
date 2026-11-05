@@ -1,0 +1,4 @@
+@model IEnumerable<ClinicaOdontologica.Models.Agendamento>
+<div class="d-flex justify-content-between"><h2>Agendamentos</h2><a class="btn btn-primary" href="/Agendamentos/Criar">Novo agendamento</a></div>
+<table class="table table-striped bg-white mt-3"><thead><tr><th>Data</th><th>Paciente</th><th>Telefone</th><th>Procedimento</th><th>Valor</th><th>Ação</th></tr></thead><tbody>
+@foreach(var a in Model){<tr><td>@a.DataAgendamento.ToString("dd/MM/yyyy HH:mm")</td><td>@a.Paciente?.Nome</td><td>@a.Paciente?.Telefone</td><td>@a.Procedimento?.Nome</td><td>@a.Procedimento?.Valor.ToString("C")</td><td><a href="/Agendamentos/Editar/@a.Id">Alterar data</a></td></tr>}</tbody></table>

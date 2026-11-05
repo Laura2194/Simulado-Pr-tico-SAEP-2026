@@ -1,0 +1,3 @@
+@model ClinicaOdontologica.Models.Agendamento
+<h2>Alterar data do agendamento</h2><p>Agendamento de @Model.PacienteId / procedimento @Model.ProcedimentoId</p>
+<form method="post">@Html.AntiForgeryToken()<div class="mb-3"><label>Nova data e hora</label><input name="dataAgendamento" type="datetime-local" value="@Model.DataAgendamento.ToString("yyyy-MM-ddTHH:mm")" class="form-control" required /></div><button class="btn btn-primary">Salvar alteração</button> <a href="/Agendamentos">Cancelar</a></form>

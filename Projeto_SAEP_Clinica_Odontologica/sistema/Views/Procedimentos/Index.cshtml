@@ -1,0 +1,3 @@
+@model IEnumerable<ClinicaOdontologica.Models.Procedimento>
+<div class="d-flex justify-content-between"><h2>Procedimentos odontológicos</h2><a class="btn btn-primary" href="/Procedimentos/Criar">Novo procedimento</a></div>
+<table class="table table-striped bg-white mt-3"><thead><tr><th>Nome</th><th>Descrição</th><th>Valor</th></tr></thead><tbody>@foreach(var p in Model){<tr><td>@p.Nome</td><td>@p.Descricao</td><td>@p.Valor.ToString("C")</td></tr>}</tbody></table>

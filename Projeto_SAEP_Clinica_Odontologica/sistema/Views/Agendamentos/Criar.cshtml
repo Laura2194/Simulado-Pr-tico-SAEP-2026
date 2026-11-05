@@ -1,0 +1,4 @@
+<h2>Novo agendamento</h2>@if(ViewBag.Erro!=null){<div class="alert alert-danger">@ViewBag.Erro</div>}
+<form method="post">@Html.AntiForgeryToken()<div class="mb-3"><label>Paciente</label><select name="pacienteId" class="form-select" required><option value="">Selecione</option>@foreach(var p in ViewBag.Pacientes){<option value="@p.Id">@p.Nome</option>}</select></div>
+<div class="mb-3"><label>Procedimento</label><select name="procedimentoId" class="form-select" required><option value="">Selecione</option>@foreach(var p in ViewBag.Procedimentos){<option value="@p.Id">@p.Nome</option>}</select></div>
+<div class="mb-3"><label>Data e hora</label><input name="dataAgendamento" type="datetime-local" class="form-control" required /></div><button class="btn btn-primary">Salvar</button> <a href="/Agendamentos">Cancelar</a></form>
